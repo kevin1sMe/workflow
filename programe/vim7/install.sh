@@ -7,5 +7,5 @@ mkdir -p ${BACKUP_DIR}
 mv ~/.vim ${BACKUP_DIR}/
 mv ~/.vimrc ${BACKUP_DIR}/
 
-cp -R .vim ~/.vim
+cp -R vim ~/.vim
 cp vimrc ~/.vimrc

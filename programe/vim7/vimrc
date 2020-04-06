@@ -11,9 +11,6 @@ filetype plugin on
 
 set nocompatible
 
-"tab
-set tags+=.,./**/tags
-
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -134,8 +131,6 @@ map <c-e> <ESC>:AuthorInfoDetect<CR><ESC>
 let mapleader=","
 
 nnoremap <silent> <Leader>t :TlistToggle <CR>
-"command-t需要vim-ruby支持，有些情况下不能使用，推荐使用下面的ctrlp
-"nnoremap <silent> <Leader>g :CommandT <CR>
 nnoremap <silent> <Leader>g :CtrlPMixed <CR>
 
 nnoremap <silent> <Leader>w  :WMToggle <CR>
@@ -152,22 +147,8 @@ set t_Co=256
 let g:Powerline_symbols = 'fancy'
 "}
 
-
-"Tlist
-"taglist{
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-let Tlist_Auto_Open=0
-let Tlist_Use_Right_Window=1
-let Tlist_File_Fold_Auto_Close=1
-let Tlist_Close_On_Select=0
-let Tlist_Process_File_Always=1
-let Tlist_Show_One_File=1
-let Tlist_Exit_OnlyWindow=1
-"}
-
 "winManager 
 let g:winManagerWindowLayout="FileExplorer"
-""let g:winManagerWindowLayout = "TagList|FileExplorer,BufExplorer"
 let g:winManagerWidth = 30
 
 "NERDTree{
@@ -197,19 +178,3 @@ let Grep_Default_Filelist="*.cpp *.c *.cc *.h"
 let Grep_Xargs_Options='-print0'
 let Egrep_Path="/usr/bin/egrep"
 let Fgrep_Path="/usr/bin/fgrep"
-
-"clang_complete{
-""let completeopt-=preview
-let g:clang_complete_auto = 1
-" clang_complete 相关
-"产生错误时打开 quickfix 窗口
-let g:clang_complete_copen = 1
-"定期更新 quickfix 窗口
-let g:clang_periodic_quickfix = 1
-"开启 code snippets 功能
-let g:clang_snippets = 0
-"}
-
-
-vmap "+y :w !pbcopy<CR><CR>
-nmap "+p :r !pbpaste<CR><CR>
